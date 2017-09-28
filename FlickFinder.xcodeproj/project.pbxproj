@@ -12,8 +12,7 @@
 		8E993C031F7CD9E4009DC8A3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8E993C011F7CD9E4009DC8A3 /* Main.storyboard */; };
 		8E993C051F7CD9E4009DC8A3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8E993C041F7CD9E4009DC8A3 /* Assets.xcassets */; };
 		8E993C081F7CD9E4009DC8A3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8E993C061F7CD9E4009DC8A3 /* LaunchScreen.storyboard */; };
-		8E993C131F7CD9E4009DC8A3 /* FlickFinderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E993C121F7CD9E4009DC8A3 /* FlickFinderTests.swift */; };
-		8E993C1E1F7CD9E4009DC8A3 /* FlickFinderUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E993C1D1F7CD9E4009DC8A3 /* FlickFinderUITests.swift */; };
+		8E993C2C1F7CE125009DC8A3 /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E993C2B1F7CE125009DC8A3 /* Const.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,11 +41,8 @@
 		8E993C071F7CD9E4009DC8A3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8E993C091F7CD9E4009DC8A3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8E993C0E1F7CD9E4009DC8A3 /* FlickFinderTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FlickFinderTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		8E993C121F7CD9E4009DC8A3 /* FlickFinderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlickFinderTests.swift; sourceTree = "<group>"; };
-		8E993C141F7CD9E4009DC8A3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8E993C191F7CD9E4009DC8A3 /* FlickFinderUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FlickFinderUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		8E993C1D1F7CD9E4009DC8A3 /* FlickFinderUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlickFinderUITests.swift; sourceTree = "<group>"; };
-		8E993C1F1F7CD9E4009DC8A3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8E993C2B1F7CE125009DC8A3 /* Const.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Const.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,8 +74,6 @@
 			isa = PBXGroup;
 			children = (
 				8E993BFC1F7CD9E4009DC8A3 /* FlickFinder */,
-				8E993C111F7CD9E4009DC8A3 /* FlickFinderTests */,
-				8E993C1C1F7CD9E4009DC8A3 /* FlickFinderUITests */,
 				8E993BFB1F7CD9E4009DC8A3 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -103,26 +97,9 @@
 				8E993C041F7CD9E4009DC8A3 /* Assets.xcassets */,
 				8E993C061F7CD9E4009DC8A3 /* LaunchScreen.storyboard */,
 				8E993C091F7CD9E4009DC8A3 /* Info.plist */,
+				8E993C2B1F7CE125009DC8A3 /* Const.swift */,
 			);
 			path = FlickFinder;
-			sourceTree = "<group>";
-		};
-		8E993C111F7CD9E4009DC8A3 /* FlickFinderTests */ = {
-			isa = PBXGroup;
-			children = (
-				8E993C121F7CD9E4009DC8A3 /* FlickFinderTests.swift */,
-				8E993C141F7CD9E4009DC8A3 /* Info.plist */,
-			);
-			path = FlickFinderTests;
-			sourceTree = "<group>";
-		};
-		8E993C1C1F7CD9E4009DC8A3 /* FlickFinderUITests */ = {
-			isa = PBXGroup;
-			children = (
-				8E993C1D1F7CD9E4009DC8A3 /* FlickFinderUITests.swift */,
-				8E993C1F1F7CD9E4009DC8A3 /* Info.plist */,
-			);
-			path = FlickFinderUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -193,6 +170,7 @@
 				TargetAttributes = {
 					8E993BF91F7CD9E4009DC8A3 = {
 						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = P4A7X6NVVK;
 						ProvisioningStyle = Automatic;
 					};
 					8E993C0D1F7CD9E4009DC8A3 = {
@@ -261,6 +239,7 @@
 			files = (
 				8E993C001F7CD9E4009DC8A3 /* ViewController.swift in Sources */,
 				8E993BFE1F7CD9E4009DC8A3 /* AppDelegate.swift in Sources */,
+				8E993C2C1F7CE125009DC8A3 /* Const.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -268,7 +247,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8E993C131F7CD9E4009DC8A3 /* FlickFinderTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -276,7 +254,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8E993C1E1F7CD9E4009DC8A3 /* FlickFinderUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -414,6 +391,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = P4A7X6NVVK;
 				INFOPLIST_FILE = FlickFinder/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = dmikhov.FlickFinder;
@@ -426,6 +404,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = P4A7X6NVVK;
 				INFOPLIST_FILE = FlickFinder/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = dmikhov.FlickFinder;
@@ -507,6 +486,7 @@
 				8E993C241F7CD9E4009DC8A3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8E993C251F7CD9E4009DC8A3 /* Build configuration list for PBXNativeTarget "FlickFinderTests" */ = {
 			isa = XCConfigurationList;
@@ -515,6 +495,7 @@
 				8E993C271F7CD9E4009DC8A3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8E993C281F7CD9E4009DC8A3 /* Build configuration list for PBXNativeTarget "FlickFinderUITests" */ = {
 			isa = XCConfigurationList;
@@ -523,6 +504,7 @@
 				8E993C2A1F7CD9E4009DC8A3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
