@@ -15,23 +15,6 @@
 		8E993C2C1F7CE125009DC8A3 /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E993C2B1F7CE125009DC8A3 /* Const.swift */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		8E993C0F1F7CD9E4009DC8A3 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 8E993BF21F7CD9E4009DC8A3 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 8E993BF91F7CD9E4009DC8A3;
-			remoteInfo = FlickFinder;
-		};
-		8E993C1A1F7CD9E4009DC8A3 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 8E993BF21F7CD9E4009DC8A3 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 8E993BF91F7CD9E4009DC8A3;
-			remoteInfo = FlickFinder;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
 		8E993BFA1F7CD9E4009DC8A3 /* FlickFinder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlickFinder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E993BFD1F7CD9E4009DC8A3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -40,27 +23,11 @@
 		8E993C041F7CD9E4009DC8A3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8E993C071F7CD9E4009DC8A3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8E993C091F7CD9E4009DC8A3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8E993C0E1F7CD9E4009DC8A3 /* FlickFinderTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FlickFinderTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		8E993C191F7CD9E4009DC8A3 /* FlickFinderUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FlickFinderUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E993C2B1F7CE125009DC8A3 /* Const.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Const.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		8E993BF71F7CD9E4009DC8A3 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		8E993C0B1F7CD9E4009DC8A3 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		8E993C161F7CD9E4009DC8A3 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -82,8 +49,6 @@
 			isa = PBXGroup;
 			children = (
 				8E993BFA1F7CD9E4009DC8A3 /* FlickFinder.app */,
-				8E993C0E1F7CD9E4009DC8A3 /* FlickFinderTests.xctest */,
-				8E993C191F7CD9E4009DC8A3 /* FlickFinderUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -122,42 +87,6 @@
 			productReference = 8E993BFA1F7CD9E4009DC8A3 /* FlickFinder.app */;
 			productType = "com.apple.product-type.application";
 		};
-		8E993C0D1F7CD9E4009DC8A3 /* FlickFinderTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 8E993C251F7CD9E4009DC8A3 /* Build configuration list for PBXNativeTarget "FlickFinderTests" */;
-			buildPhases = (
-				8E993C0A1F7CD9E4009DC8A3 /* Sources */,
-				8E993C0B1F7CD9E4009DC8A3 /* Frameworks */,
-				8E993C0C1F7CD9E4009DC8A3 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				8E993C101F7CD9E4009DC8A3 /* PBXTargetDependency */,
-			);
-			name = FlickFinderTests;
-			productName = FlickFinderTests;
-			productReference = 8E993C0E1F7CD9E4009DC8A3 /* FlickFinderTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		8E993C181F7CD9E4009DC8A3 /* FlickFinderUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 8E993C281F7CD9E4009DC8A3 /* Build configuration list for PBXNativeTarget "FlickFinderUITests" */;
-			buildPhases = (
-				8E993C151F7CD9E4009DC8A3 /* Sources */,
-				8E993C161F7CD9E4009DC8A3 /* Frameworks */,
-				8E993C171F7CD9E4009DC8A3 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				8E993C1B1F7CD9E4009DC8A3 /* PBXTargetDependency */,
-			);
-			name = FlickFinderUITests;
-			productName = FlickFinderUITests;
-			productReference = 8E993C191F7CD9E4009DC8A3 /* FlickFinderUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -172,16 +101,6 @@
 						CreatedOnToolsVersion = 8.3.3;
 						DevelopmentTeam = P4A7X6NVVK;
 						ProvisioningStyle = Automatic;
-					};
-					8E993C0D1F7CD9E4009DC8A3 = {
-						CreatedOnToolsVersion = 8.3.3;
-						ProvisioningStyle = Automatic;
-						TestTargetID = 8E993BF91F7CD9E4009DC8A3;
-					};
-					8E993C181F7CD9E4009DC8A3 = {
-						CreatedOnToolsVersion = 8.3.3;
-						ProvisioningStyle = Automatic;
-						TestTargetID = 8E993BF91F7CD9E4009DC8A3;
 					};
 				};
 			};
@@ -199,8 +118,6 @@
 			projectRoot = "";
 			targets = (
 				8E993BF91F7CD9E4009DC8A3 /* FlickFinder */,
-				8E993C0D1F7CD9E4009DC8A3 /* FlickFinderTests */,
-				8E993C181F7CD9E4009DC8A3 /* FlickFinderUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -213,20 +130,6 @@
 				8E993C081F7CD9E4009DC8A3 /* LaunchScreen.storyboard in Resources */,
 				8E993C051F7CD9E4009DC8A3 /* Assets.xcassets in Resources */,
 				8E993C031F7CD9E4009DC8A3 /* Main.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		8E993C0C1F7CD9E4009DC8A3 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		8E993C171F7CD9E4009DC8A3 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -243,34 +146,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		8E993C0A1F7CD9E4009DC8A3 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		8E993C151F7CD9E4009DC8A3 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		8E993C101F7CD9E4009DC8A3 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 8E993BF91F7CD9E4009DC8A3 /* FlickFinder */;
-			targetProxy = 8E993C0F1F7CD9E4009DC8A3 /* PBXContainerItemProxy */;
-		};
-		8E993C1B1F7CD9E4009DC8A3 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 8E993BF91F7CD9E4009DC8A3 /* FlickFinder */;
-			targetProxy = 8E993C1A1F7CD9E4009DC8A3 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		8E993C011F7CD9E4009DC8A3 /* Main.storyboard */ = {
@@ -413,60 +289,6 @@
 			};
 			name = Release;
 		};
-		8E993C261F7CD9E4009DC8A3 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = FlickFinderTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = dmikhov.FlickFinderTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FlickFinder.app/FlickFinder";
-			};
-			name = Debug;
-		};
-		8E993C271F7CD9E4009DC8A3 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = FlickFinderTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = dmikhov.FlickFinderTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FlickFinder.app/FlickFinder";
-			};
-			name = Release;
-		};
-		8E993C291F7CD9E4009DC8A3 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				INFOPLIST_FILE = FlickFinderUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = dmikhov.FlickFinderUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
-				TEST_TARGET_NAME = FlickFinder;
-			};
-			name = Debug;
-		};
-		8E993C2A1F7CD9E4009DC8A3 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				INFOPLIST_FILE = FlickFinderUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = dmikhov.FlickFinderUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
-				TEST_TARGET_NAME = FlickFinder;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -484,24 +306,6 @@
 			buildConfigurations = (
 				8E993C231F7CD9E4009DC8A3 /* Debug */,
 				8E993C241F7CD9E4009DC8A3 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		8E993C251F7CD9E4009DC8A3 /* Build configuration list for PBXNativeTarget "FlickFinderTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				8E993C261F7CD9E4009DC8A3 /* Debug */,
-				8E993C271F7CD9E4009DC8A3 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		8E993C281F7CD9E4009DC8A3 /* Build configuration list for PBXNativeTarget "FlickFinderUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				8E993C291F7CD9E4009DC8A3 /* Debug */,
-				8E993C2A1F7CD9E4009DC8A3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
