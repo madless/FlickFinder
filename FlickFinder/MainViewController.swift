@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  MainViewController.swift
 //  FlickFinder
 //
 //  Created by dmikhov on 28.09.17.
@@ -8,19 +8,21 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITextFieldDelegate {
-    @IBOutlet var loadingIndicator: UIActivityIndicatorView!
+class MainViewController: UIViewController, UITextFieldDelegate, UITableViewDataSource, UITableViewDelegate {
     
+    @IBOutlet var loadingIndicator: UIActivityIndicatorView!
     @IBOutlet var labelError: UILabel!
     @IBOutlet var fieldLatitude: UITextField!
-    @IBOutlet var imageView: UIImageView!
     @IBOutlet var fieldLongitude: UITextField!
     @IBOutlet var fieldText: UITextField!
+    @IBOutlet var tableView: UITableView!
+    
+    var photos: [Photo] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        NotificationCenter.default.addObserver(self, selector: #selector(ViewController.keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(ViewController.keyboardWillHide), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(MainViewController.keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(MainViewController.keyboardWillHide), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
         // Do any additional setup after loading the view, typically from a nib.
         fieldLatitude.delegate = self
         fieldLongitude.delegate = self
@@ -89,10 +91,21 @@ class ViewController: UIViewController, UITextFieldDelegate {
                         parsedResult = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as! [String:AnyObject]
                         let photosDictionary = parsedResult[Const.FlickrResponseKeys.Photos] as! [String:AnyObject]
                         let photosArray = photosDictionary[Const.FlickrResponseKeys.Photo] as! [[String:AnyObject]]
-                        let randomNumber = Int(arc4random_uniform((UInt32(photosArray.count))))
-                        let photo = photosArray[randomNumber]
-                        let url = photo[Const.FlickrResponseKeys.MediumURL] as! String
-                        self.showImage(url: url)
+                        self.photos = []
+                        for photo in photosArray {
+                            let photoUrl = photo[Const.FlickrResponseKeys.MediumURL] as? String
+                            guard let url = photoUrl else { continue }
+                            let photoName = photo[Const.FlickrResponseKeys.Title] as? String
+                            guard let name = photoName else { continue }
+                            let photoId = photo[Const.FlickrResponseKeys.Id] as? String
+                            guard let id = photoId else { continue }
+                            let photoItem = Photo(id, name, url)
+                            self.photos.append(photoItem)
+                        }
+                        DispatchQueue.main.async {
+                            self.loadingIndicator.stopAnimating()
+                            self.tableView.reloadData()
+                        }
                     } catch {
                         
                     }
@@ -137,25 +150,24 @@ class ViewController: UIViewController, UITextFieldDelegate {
         task.resume()
     }
     
-    private func showImage(url: String) {
-        let imageUrl = URL(string: url)!
-        let task = URLSession.shared.dataTask(with: imageUrl) {
-            (data, resp, error) in
-            DispatchQueue.main.async {
-                if error == nil {
-                    let downloadedImage = UIImage(data: data!)
-                    self.imageView.image = downloadedImage
-                    print("Successfully loaded!")
-                } else {
-                    print("Error on loading!")
-                }
-                self.loadingIndicator.stopAnimating()
-                
-            }
-        }
-        
-        task.resume()
-    }
+//    private func showImage(url: String, view: UIImageView) {
+//        // view.image = nil
+//        let imageUrl = URL(string: url)!
+//        let task = URLSession.shared.dataTask(with: imageUrl) {
+//            (data, resp, error) in
+//            DispatchQueue.main.async {
+//                if error == nil {
+//                    let downloadedImage = UIImage(data: data!)
+//                    view.image = downloadedImage
+//                    // print("Successfully loaded!")
+//                } else {
+//                    print("Error on loading!: ", url)
+//                }
+//            }
+//        }
+//        
+//        task.resume()
+//    }
     
     func getRequestUrlByParams(params:[[String:String]]) -> URL {
         var components = URLComponents()
@@ -241,5 +253,72 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     func clearError() {
         labelError.text = ""
+    }
+    
+    // MARK: tableView
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        // #warning Incomplete implementation, return the number of sections
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        // #warning Incomplete implementation, return the number of rows
+        return photos.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "item", for: indexPath) as! CustomTableViewCell
+        
+        let item = self.photos[indexPath.row]
+        
+//        let img = UIImage()
+//        cell.imageView?.image = imageWithImage(image: img, scaledToSize: CGSize(width: 50, height: 50))
+//        cell.imageView?.contentMode = .scaleAspectFit
+        ImageHelper.showImage(url: item.url!, view: cell.customImage!)
+        
+        
+//        let cell: CustomTableViewCell = CustomTableViewCell(style: UITableViewCellStyle.subtitle, reuseIdentifier: "item")
+//        cell.imageView!.layer.cornerRadius = 20
+//        cell.imageView!.clipsToBounds = true
+        
+        cell.customTitle.text = item.name
+//        cell.detailTextLabel?.text = item.id
+        
+//        self.showImage(url: item.url!, view: cell.imageView!)
+        
+//        let cellImg : UIImageView = UIImageView(frame: CGRect(x: 5, y: 5, width: 50, height: 50))
+//        cellImg.layoutMargins = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 60)
+//        self.showImage(url: item.url!, view: cellImg)
+//        DispatchQueue.main.async {
+//            cell.addSubview(cellImg)
+//        }
+        
+        
+//        cell.imageView?.frame = CGRect(x : 10, y : 10,width: 45, height: 45)
+        
+        return cell
+    }
+    
+    func imageWithImage(image:UIImage, scaledToSize newSize:CGSize) -> UIImage {
+        UIGraphicsBeginImageContext( newSize )
+        image.draw(in: CGRect(x: 0,y: 0,width: newSize.width,height: newSize.height))
+        let newImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return newImage!.withRenderingMode(.alwaysTemplate)
+    }
+
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        //print(photos[indexPath.row].title)
+        performSegue(withIdentifier: "openPhotoSegue", sender: photos[indexPath.row])
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "openPhotoSegue" {
+            if let dest = segue.destination as? PhotoViewController {
+                dest.photo = sender as? Photo
+            }
+        }
     }
 }

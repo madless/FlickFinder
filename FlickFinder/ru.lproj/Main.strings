@@ -1,0 +1,18 @@
+
+/* Class = "UIButton"; accessibilityHint = "SearchByText"; ObjectID = "Etb-qX-qBW"; */
+"Etb-qX-qBW.accessibilityHint" = "Искать по тексту";
+
+/* Class = "UILabel"; text = "some error"; ObjectID = "Ftl-IZ-eWV"; */
+"Ftl-IZ-eWV.text" = "some error";
+
+/* Class = "UILabel"; text = "Flickr Finder"; ObjectID = "Nfw-7V-UZC"; */
+"Nfw-7V-UZC.text" = "Flickr поиск";
+
+/* Class = "UITextField"; placeholder = "Latitude"; ObjectID = "WCy-Xb-msy"; */
+"WCy-Xb-msy.placeholder" = "Широта";
+
+/* Class = "UITextField"; placeholder = "Describe the photo"; ObjectID = "f0T-x4-hgA"; */
+"f0T-x4-hgA.placeholder" = "Опишите фото";
+
+/* Class = "UITextField"; placeholder = "Longitude"; ObjectID = "n0O-Ua-dsz"; */
+"n0O-Ua-dsz.placeholder" = "Долгота";
