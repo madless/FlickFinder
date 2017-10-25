@@ -8,23 +8,32 @@
 
 import Foundation
 import UIKit
+import Alamofire
+import AlamofireImage
 
 class ImageHelper {
     public static func showImage(url: String, view: UIImageView) {
-        // view.image = nil
-        let imageUrl = URL(string: url)!
-        let task = URLSession.shared.dataTask(with: imageUrl) {
-            (data, resp, error) in
-            DispatchQueue.main.async {
-                if error == nil {
-                    let downloadedImage = UIImage(data: data!)
-                    view.image = downloadedImage
-                    // print("Successfully loaded!")
-                } else {
-                    print("Error on loading!: ", url)
-                }
+//        let imageUrl = URL(string: url)!
+//        let task = URLSession.shared.dataTask(with: imageUrl) {
+//            (data, resp, error) in
+//            DispatchQueue.main.async {
+//                if error == nil {
+//                    let downloadedImage = UIImage(data: data!)
+//                    view.image = downloadedImage
+//                    // print("Successfully loaded!")
+//                } else {
+//                    print("Error on loading!: ", url)
+//                }
+//            }
+//        }
+//        task.resume()
+        Alamofire.request(url).responseImage {
+            response in
+            if let data = response.data {
+                let image = UIImage(data: data)
+                let circularImage = image?.af_imageRoundedIntoCircle()
+                view.image = circularImage
             }
         }
-        task.resume()
     }
 }

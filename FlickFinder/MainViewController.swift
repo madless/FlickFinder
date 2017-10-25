@@ -272,30 +272,9 @@ class MainViewController: UIViewController, UITextFieldDelegate, UITableViewData
         
         let item = self.photos[indexPath.row]
         
-//        let img = UIImage()
-//        cell.imageView?.image = imageWithImage(image: img, scaledToSize: CGSize(width: 50, height: 50))
-//        cell.imageView?.contentMode = .scaleAspectFit
         ImageHelper.showImage(url: item.url!, view: cell.customImage!)
         
-        
-//        let cell: CustomTableViewCell = CustomTableViewCell(style: UITableViewCellStyle.subtitle, reuseIdentifier: "item")
-//        cell.imageView!.layer.cornerRadius = 20
-//        cell.imageView!.clipsToBounds = true
-        
         cell.customTitle.text = item.name
-//        cell.detailTextLabel?.text = item.id
-        
-//        self.showImage(url: item.url!, view: cell.imageView!)
-        
-//        let cellImg : UIImageView = UIImageView(frame: CGRect(x: 5, y: 5, width: 50, height: 50))
-//        cellImg.layoutMargins = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 60)
-//        self.showImage(url: item.url!, view: cellImg)
-//        DispatchQueue.main.async {
-//            cell.addSubview(cellImg)
-//        }
-        
-        
-//        cell.imageView?.frame = CGRect(x : 10, y : 10,width: 45, height: 45)
         
         return cell
     }
